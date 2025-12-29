@@ -6,17 +6,14 @@ let chatInput = document.getElementById("chatbox-input");
 let sendButton = document.getElementById("send-message");
 let messagesContainer = document.getElementById("chatbox-messages");
 
-// Toggle chatbox visibility when the "Chat" button is clicked
 chatboxToggle.addEventListener("click", function() {
   chatbox.classList.toggle("open");
 });
 
-// Close chatbox when the close button is clicked
 closeChatButton.addEventListener("click", function() {
   chatbox.classList.remove("open");
 });
 
-// Handle sending messages
 sendButton.addEventListener("click", function() {
   let message = chatInput.value;
   if (message.trim() !== "") {
@@ -24,13 +21,13 @@ sendButton.addEventListener("click", function() {
     userMessage.classList.add("user-message");
     userMessage.textContent = message;
     messagesContainer.appendChild(userMessage);
-    chatInput.value = ""; // Clear input field
-    messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
+    chatInput.value = "";
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 });
 
-// For demo purposes: Auto-reply by creator
 function autoReply() {
+  if (!chatbox.classList.contains("open")) return;
   let replyMessage = document.createElement("div");
   replyMessage.classList.add("creator-message");
   replyMessage.textContent = "Thank you for your message! We will respond shortly.";
@@ -38,7 +35,7 @@ function autoReply() {
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
-setInterval(autoReply, 10000); // Auto-reply every 10 seconds for demo
+setInterval(autoReply, 10000);
 
 // Event-related functions
 const eventsData = [
@@ -54,7 +51,7 @@ function loadEvents() {
   eventsData.forEach(event => {
     const card = document.createElement("div");
     card.className = "event-card";
-    card.innerHTML = `<h3>${event.title}</h3><p>Type: ${event.type}</p>`;
+    card.innerHTML = `<h4>${event.title}</h4><p>Type: ${event.type}</p>`;
     container.appendChild(card);
   });
 }
@@ -72,7 +69,7 @@ function filterEvents() {
   filtered.forEach(event => {
     const card = document.createElement("div");
     card.className = "event-card";
-    card.innerHTML = `<h3>${event.title}</h3><p>Type: ${event.type}</p>`;
+    card.innerHTML = `<h4>${event.title}</h4><p>Type: ${event.type}</p>`;
     container.appendChild(card);
   });
 }
@@ -81,15 +78,31 @@ function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
 }
 
-  document.getElementById('explore-btn').addEventListener('click', function() {
-    document.body.classList.add('fade-out');
-    setTimeout(() => {
-      window.location.href = "events.html";
-    }, 500); 
+document.addEventListener('DOMContentLoaded', loadEvents);
+
+document.getElementById('explore-btn').addEventListener('click', function() {
+  document.body.classList.add('fade-out');
+  setTimeout(() => {
+    window.location.href = "events.html";
+  }, 500); 
+});
+
+window.addEventListener('pageshow', function(event) {
+  document.body.classList.remove('fade-out');
+});
+
+// Navbar toggle for mobile
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+
+if(navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
   });
 
-  
-  window.addEventListener('pageshow', function(event) {
-    document.body.classList.remove('fade-out');
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
   });
-
+}

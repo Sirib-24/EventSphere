@@ -9,8 +9,9 @@
 <body>
   <header>
     <div class="logo">EventSphere</div>
+    <button class="nav-toggle" id="nav-toggle">☰</button>
     <nav>
-      <ul>
+      <ul id="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="events.html">All Events</a></li>
         <li><a href="local.html">Local Gems</a></li>
@@ -28,7 +29,6 @@
       <h1>Discover Events That Matter To You</h1>
       <p>Smart, local, and personalized. Find trending and nearby events, instantly.</p>
       <button class="btn" id="explore-btn">Explore Events</button>
-
     </div>
   </section>
 
@@ -44,16 +44,17 @@
     <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
   </section>
 
-  
+  <section class="events page" id="events-section">
+    <!-- Event cards will load here -->
+  </section>
+
   <!-- Chatbox -->
-  <div id="chatbox-container" class="chatbox">
+  <div id="chatbox-container">
     <div id="chatbox-header">
       <span>Chat with Us</span>
       <button id="close-chat">X</button>
     </div>
-    <div id="chatbox-messages" class="chatbox-messages">
-      <!-- Chat messages will appear here -->
-    </div>
+    <div id="chatbox-messages"></div>
     <div id="chatbox-input-container">
       <input type="text" id="chatbox-input" placeholder="Type a message..." />
       <button id="send-message">Send</button>
