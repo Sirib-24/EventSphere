@@ -19,12 +19,13 @@ body.dark-mode {
 
 /* Header & Navigation */
 header {
-    background-color: #333; /* Updated to match previous color */
+    background-color: #333;
     color: white;
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 header .logo {
@@ -37,11 +38,11 @@ header nav ul {
     padding: 0;
     display: flex;
     gap: 1.2rem;
+    flex-wrap: wrap;
 }
 
 header nav ul li {
     display: inline-block;
-    margin-right: 20px;
 }
 
 header nav ul li a {
@@ -57,10 +58,29 @@ header nav ul li a.active {
 
 /* Hero Section */
 .hero {
-    padding: 4rem 2rem;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: url('fair.jpg') no-repeat center center/cover;
     color: white;
+    padding: 100px 20px;
     text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.hero .btn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 /* Buttons */
@@ -97,12 +117,41 @@ header nav ul li a.active {
     border-radius: 8px;
     background: var(--bg);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+}
+
+.event-card h4 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.event-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 1rem 0;
+}
+
+.event-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.event-card button:hover {
+    background-color: #0056b3;
 }
 
 /* Page Section Wrapper */
 .page {
     padding: 3rem 2rem;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -174,13 +223,6 @@ footer {
     margin-top: 2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .page {
-        padding: 2rem 1rem;
-    }
-}
-
 /* Chatbox Styles */
 #chatbox-toggle {
     background-color: #2575fc;
@@ -197,11 +239,10 @@ footer {
     background-color: #1a5fd0;
 }
 
-/* Chatbox Styles */
 #chatbox-container {
     position: fixed;
     bottom: 0;
-    left: -100%; /* Initially off-screen */
+    left: -100%;
     width: 100%;
     height: 100%;
     background: #fff;
@@ -216,7 +257,7 @@ footer {
 }
 
 #chatbox-container.open {
-    left: 0; /* Slide in from left */
+    left: 0;
 }
 
 #chatbox-header {
@@ -280,155 +321,102 @@ footer {
     padding: 2rem;
     margin-top: 3rem;
     border-radius: 10px;
-  }
-  
-  .local-gems h3 {
+}
+
+.local-gems h3 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
-  }
-  
-  .local-gems .event-card {
+}
+
+.local-gems .event-card {
     background-color: white;
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-  }
-  
-  .local-gems .event-card:hover {
+}
+
+.local-gems .event-card:hover {
     transform: scale(1.05);
-  }
-  
-  .local-gems .event-card h4 {
+}
+
+.local-gems .event-card h4 {
     font-size: 1.5rem;
     color: #333;
-  }
-  
-  .local-gems .event-card p {
+}
+
+.local-gems .event-card p {
     font-size: 1rem;
     color: #555;
     margin: 1rem 0;
-  }
-  
-  .local-gems .event-card button {
+}
+
+.local-gems .event-card button {
     background-color: #007bff;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  .local-gems .event-card button:hover {
-    background-color: #0056b3;
-  }
+}
 
-  /* 🔥 Upcoming Events Section */
+.local-gems .event-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Upcoming Events Section */
 .upcoming-events {
     margin-top: 2rem;
-  }
-  
-  .upcoming-events h3 {
+}
+
+.upcoming-events h3 {
     font-size: 1.8rem;
     color: #007bff;
     margin-bottom: 1.5rem;
-  }
-  
-  .event-card {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .event-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .event-card h4 {
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  .event-card p {
-    font-size: 1rem;
-    color: #555;
-    margin: 1rem 0;
-  }
-  
-  .event-card button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .event-card button:hover {
-    background-color: #0056b3;
-  }
-  .hero {
-    background: url('fair.jpg') no-repeat center center/cover;
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-  }
-  
-  .hero .btn {
-    .hero .btn {
-      background-color: #000000; /* black */
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-  }
-  
-  }
-  .pricing-plans {
+}
+
+/* Pricing Section */
+.pricing-plans {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
-  }
-  
-  .plan {
+}
+
+.plan {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     text-align: center;
-  }
-  
-  .plan h3 {
+}
+
+.plan h3 {
     font-size: 1.5rem;
     color: #2575fc;
     margin-bottom: 1rem;
-  }
-  
-  .plan p {
+}
+
+.plan p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #555;
-  }
-  
-  .plan ul {
+}
+
+.plan ul {
     list-style: none;
     padding: 0;
     margin-bottom: 1rem;
-  }
-  
-  .plan ul li {
+}
+
+.plan ul li {
     margin: 0.5rem 0;
-  }
-  
-  .plan button {
+}
+
+.plan button {
     background-color: #2575fc;
     color: white;
     border: none;
@@ -436,9 +424,90 @@ footer {
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.3s ease;
-  }
-  
-  .plan button:hover {
+}
+
+.plan button:hover {
     background-color: #1a5fd0;
-  }
-  
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .page, .hero, .filters, .local-gems, .pricing-plans {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .events, .local-gems, .pricing-plans {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .event-card, .plan {
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 40px 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    form input, form textarea, form select, form button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 1rem 0.5rem;
+    }
+}
