@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Events - EventSphere</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">EventSphere</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" class="active">All Events</a></li>
+        <li><a href="local.html">Local Gems</a></li>
+        <li><a href="create.html">Create Event</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><button id="chatbox-toggle">Chat</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page">
+    <h2>All Events</h2>
+    <p>Browse through all upcoming events. Use filters to find events that match your interests.</p>
+
+    <!-- 🔍 Filters -->
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="Search by event name..." />
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="music">Music</option>
+        <option value="workshop">Workshop</option>
+        <option value="exhibition">Exhibition</option>
+        <option value="local">Local Gems</option>
+      </select>
+      <input type="date" id="dateFilter" />
+      <button class="btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+
+    <!-- 🌟 Featured Events -->
+    <section>
+      <h3>🌟 Featured Events</h3>
+      <div class="events">
+        <div class="event-card">
+          <h3>Indie Music Fest</h3>
+          <p>📍 Mumbai | 🎵 Music | 🗓️ April 27, 2025</p>
+          <p>A gathering of indie bands and solo artists under one roof.</p>
+          <button>View Details</button>
+        </div>
+        <div class="event-card">
+          <h3>Startup Workshop 101</h3>
+          <p>📍 Bengaluru | 🧠 Workshop | 🗓️ May 3, 2025</p>
+          <p>Learn how to kickstart your entrepreneurial journey.</p>
+          <button>View Details</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔥 Upcoming Events Section (Moved Down) -->
+    <div class="upcoming-events">
+      <h3>🔥 Upcoming Events</h3>
+
+      <div class="event-card">
+        <h4>TechTalks 2025</h4>
+        <p>📍 Bengaluru | 🧠 Workshop | 🗓️ April 25, 2025</p>
+        <p>Join cybersecurity and AI experts for a tech-packed day!</p>
+        <button>View Details</button>
+      </div>
+
+      <div class="event-card">
+        <h4>Street Food Fiesta</h4>
+        <p>📍 Delhi | 🍴 Local Gems | 🗓️ April 28, 2025</p>
+        <p>Explore 50+ local street food vendors and their signature dishes.</p>
+        <button>View Details</button>
+      </div>
+
+      <div class="event-card">
+        <h4>Indie Music Fest</h4>
+        <p>📍 Mumbai | 🎵 Music | 🗓️ May 3, 2025</p>
+        <p>Experience live performances by India’s top indie artists.</p>
+        <button>View Details</button>
+      </div>
+
+      <div class="event-card">
+        <h4>Modern Art Showcase</h4>
+        <p>📍 Pune | 🎨 Exhibition | 🗓️ May 5–7, 2025</p>
+        <p>A display of modern art by upcoming and award-winning artists.</p>
+        <button>View Details</button>
+      </div>
+    </div>
+
+    <!-- ✅ Pagination -->
+    <div style="text-align: center; margin-top: 2rem;">
+      <button class="btn">Previous</button>
+      <span style="margin: 0 1rem;">Page 1 of 5</span>
+      <button class="btn">Next</button>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Eventify | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+  </footer>
+
+  <!-- 💬 Chatbox container -->
+  <div id="chatbox-container">
+    <div id="chatbox-header">
+      Chat with Creator
+      <button id="close-chat">✖</button>
+    </div>
+    <div id="chatbox-messages"></div>
+    <div id="chatbox-input-container">
+      <input type="text" id="chatbox-input" placeholder="Type your message..." />
+      <button id="send-message">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

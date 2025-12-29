@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings - EventSphere</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">EventSphere</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">All Events</a></li>
+        <li><a href="local.html">Local Gems</a></li>
+        <li><a href="create.html">Create Event</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="settings.html" class="active">Settings</a></li>
+        <li><a href="#" id="chatbox-toggle">Chat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="settings">
+    <h2>Account Settings</h2>
+
+    <div class="settings-category">
+      <h3>Profile</h3>
+      <form>
+        <label for="username">Name:</label>
+        <input type="text" id="username" value="John Doe" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" value="john.doe@example.com" />
+
+        <label for="profile-pic">Profile Picture:</label>
+        <input type="file" id="profile-pic" />
+        
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+
+    <div class="settings-category">
+      <h3>Notification Preferences</h3>
+      <form>
+        <label for="event-notifications">Event Notifications:</label>
+        <input type="checkbox" id="event-notifications" checked />
+        
+        <label for="chat-notifications">Chat Notifications:</label>
+        <input type="checkbox" id="chat-notifications" />
+
+        <button type="submit">Save Preferences</button>
+      </form>
+    </div>
+
+    <div class="settings-category">
+      <h3>Privacy & Security</h3>
+      <form>
+        <label for="2fa">Enable Two-Factor Authentication:</label>
+        <input type="checkbox" id="2fa" />
+        
+        <button type="submit">Save Settings</button>
+      </form>
+    </div>
+
+    <div class="settings-category">
+      <h3>Language & Region</h3>
+      <form>
+        <label for="language">Language:</label>
+        <select id="language">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+        </select>
+        
+        <label for="region">Region:</label>
+        <select id="region">
+          <option value="IN">India</option>
+          <option value="US">United States</option>
+          <option value="UK">United Kingdom</option>
+        </select>
+
+        <button type="submit">Save Settings</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Eventify | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

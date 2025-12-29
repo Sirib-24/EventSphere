@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing - EventSphere</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ✅ Navbar -->
+  <header>
+    <div class="logo">EventSphere</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">All Events</a></li>
+        <li><a href="local.html">Local Gems</a></li>
+        <li><a href="create.html">Create Event</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><button id="chatbox-toggle">Chat</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ✅ Pricing Section -->
+  <section class="page">
+    <h2>Our Pricing Plans</h2>
+    <p>Choose the plan that fits your event needs.</p>
+
+    <div class="pricing-plans">
+      <div class="plan">
+        <h3>Free Plan</h3>
+        <p>₹0 / event</p>
+        <ul>
+          <li>Basic event listing</li>
+          <li>Up to 100 attendees</li>
+          <li>Community support</li>
+        </ul>
+        <button class="btn">Get Started</button>
+      </div>
+
+      <div class="plan">
+        <h3>Pro Plan</h3>
+        <p>₹499 / event</p>
+        <ul>
+          <li>Priority listing</li>
+          <li>Up to 1000 attendees</li>
+          <li>Analytics & Reports</li>
+        </ul>
+        <button class="btn">Choose Plan</button>
+      </div>
+
+      <div class="plan">
+        <h3>Premium Plan</h3>
+        <p>₹999 / event</p>
+        <ul>
+          <li>Top placement</li>
+          <li>Unlimited attendees</li>
+          <li>Dedicated support</li>
+        </ul>
+        <button class="btn">Choose Plan</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <p>&copy; 2025 Eventify | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+  </footer>
+
+  <!-- 💬 Chatbox container -->
+  <div id="chatbox-container">
+    <div id="chatbox-header">
+      Chat with Creator
+      <button id="close-chat">✖</button>
+    </div>
+    <div id="chatbox-messages"></div>
+    <div id="chatbox-input-container">
+      <input type="text" id="chatbox-input" placeholder="Type your message..." />
+      <button id="send-message">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

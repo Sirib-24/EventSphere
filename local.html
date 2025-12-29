@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Local Gems - EventSphere</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">EventSphere</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">All Events</a></li>
+        <li><a href="local.html" class="active">Local Gems</a></li>
+        <li><a href="create.html">Create Event</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><button id="chatbox-toggle">Chat</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page">
+    <h2>Local Gems</h2>
+    <p>Explore the hidden gems around your city. Find unique, offbeat events happening nearby.</p>
+
+    <!-- 🌍 Local Gems Section -->
+    <section class="local-gems">
+      <h3>🌍 Local Gems</h3>
+
+      <!-- Event Cards for Local Gems -->
+      <div class="event-card">
+        <h4>Cultural Treasure Hunt in Old Delhi</h4>
+        <p>📍 Delhi | 🎭 Cultural | 🗓️ April 30, 2025</p>
+        <p>Discover hidden gems in Old Delhi: temples, street food, and more!</p>
+        <button>View Details</button>
+      </div>
+
+      <div class="event-card">
+        <h4>Pop-up Art Gallery in an Abandoned Factory</h4>
+        <p>📍 Bengaluru | 🎨 Art Exhibition | 🗓️ May 2, 2025</p>
+        <p>Experience local art in an abandoned factory, showcasing underground artists.</p>
+        <button>View Details</button>
+      </div>
+
+      <div class="event-card">
+        <h4>Sunset Picnic at Hidden Hilltop</h4>
+        <p>📍 Pune | 🌅 Nature | 🗓️ May 5, 2025</p>
+        <p>Join us for a serene sunset picnic atop a hidden hilltop.</p>
+        <button>View Details</button>
+      </div>
+
+      <div class="event-card">
+        <h4>Rooftop Indie Music Night</h4>
+        <p>📍 Mumbai | 🎵 Music | 🗓️ May 7, 2025</p>
+        <p>Enjoy indie music live on a rooftop with stunning city views.</p>
+        <button>View Details</button>
+      </div>
+
+      <div class="event-card">
+        <h4>Traditional Pottery Making Workshop</h4>
+        <p>📍 Jaipur | 🧑‍🎨 Workshop | 🗓️ May 10, 2025</p>
+        <p>Learn the ancient art of pottery making in a traditional workshop.</p>
+        <button>View Details</button>
+      </div>
+    </section>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Eventify | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+  </footer>
+
+  <!-- 💬 Chatbox container -->
+  <div id="chatbox-container">
+    <div id="chatbox-header">
+      Chat with Creator
+      <button id="close-chat">✖</button>
+    </div>
+    <div id="chatbox-messages"></div>
+    <div id="chatbox-input-container">
+      <input type="text" id="chatbox-input" placeholder="Type your message..." />
+      <button id="send-message">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

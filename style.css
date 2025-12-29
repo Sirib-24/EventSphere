@@ -1,0 +1,444 @@
+/* Global & Theme */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+}
+
+body.dark-mode {
+    --bg: #121212;
+    --text: #f5f5f5;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #333; /* Updated to match previous color */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 1.2rem;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.7rem 1.5rem;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Filters Section */
+.filters {
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #f0f0f0;
+}
+
+/* Event Grid */
+.events {
+    padding: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.event-card {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: var(--bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Page Section Wrapper */
+.page {
+    padding: 3rem 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Page Headings */
+.page h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+/* Create Event Form Styles */
+form input,
+form textarea,
+form select,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+form button {
+    background: #2575fc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #1a5fd0;
+}
+
+/* Contact Page */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Settings Page */
+.settings {
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.settings label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.settings input[type="checkbox"],
+.settings select {
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #f0f0f0;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Chatbox Styles */
+#chatbox-toggle {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+#chatbox-toggle:hover {
+    background-color: #1a5fd0;
+}
+
+/* Chatbox Styles */
+#chatbox-container {
+    position: fixed;
+    bottom: 0;
+    left: -100%; /* Initially off-screen */
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+#chatbox-container.open {
+    left: 0; /* Slide in from left */
+}
+
+#chatbox-header {
+    background-color: #2575fc;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+#close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#chatbox-messages {
+    padding: 10px;
+    overflow-y: auto;
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+}
+
+#chatbox-input-container {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd;
+}
+
+#chatbox-input {
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#send-message {
+    padding: 5px 10px;
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#send-message:hover {
+    background-color: #1a5fd0;
+}
+
+/* Local Gems Section */
+.local-gems {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-radius: 10px;
+  }
+  
+  .local-gems h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .local-gems .event-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .local-gems .event-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .local-gems .event-card h4 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .local-gems .event-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 1rem 0;
+  }
+  
+  .local-gems .event-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .local-gems .event-card button:hover {
+    background-color: #0056b3;
+  }
+
+  /* 🔥 Upcoming Events Section */
+.upcoming-events {
+    margin-top: 2rem;
+  }
+  
+  .upcoming-events h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 1.5rem;
+  }
+  
+  .event-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .event-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .event-card h4 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .event-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 1rem 0;
+  }
+  
+  .event-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .event-card button:hover {
+    background-color: #0056b3;
+  }
+  .hero {
+    background: url('fair.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .hero .btn {
+    .hero .btn {
+      background-color: #000000; /* black */
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+  }
+  
+  }
+  .pricing-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .plan {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  
+  .plan h3 {
+    font-size: 1.5rem;
+    color: #2575fc;
+    margin-bottom: 1rem;
+  }
+  
+  .plan p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  .plan ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .plan ul li {
+    margin: 0.5rem 0;
+  }
+  
+  .plan button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .plan button:hover {
+    background-color: #1a5fd0;
+  }
+  
