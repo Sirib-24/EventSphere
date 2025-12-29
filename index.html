@@ -9,9 +9,10 @@
 <body>
   <header>
     <div class="logo">EventSphere</div>
-    <button class="nav-toggle" id="nav-toggle">☰</button>
+    <!-- Hamburger toggle for mobile -->
+    <button class="nav-toggle" id="nav-toggle">&#9776;</button>
     <nav>
-      <ul id="nav-links">
+      <ul>
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="events.html">All Events</a></li>
         <li><a href="local.html">Local Gems</a></li>
@@ -45,16 +46,18 @@
   </section>
 
   <section class="events page" id="events-section">
-    <!-- Event cards will load here -->
+    <!-- Event cards will be dynamically loaded here -->
   </section>
 
   <!-- Chatbox -->
-  <div id="chatbox-container">
+  <div id="chatbox-container" class="chatbox">
     <div id="chatbox-header">
       <span>Chat with Us</span>
       <button id="close-chat">X</button>
     </div>
-    <div id="chatbox-messages"></div>
+    <div id="chatbox-messages" class="chatbox-messages">
+      <!-- Chat messages will appear here -->
+    </div>
     <div id="chatbox-input-container">
       <input type="text" id="chatbox-input" placeholder="Type a message..." />
       <button id="send-message">Send</button>

@@ -6,14 +6,17 @@ let chatInput = document.getElementById("chatbox-input");
 let sendButton = document.getElementById("send-message");
 let messagesContainer = document.getElementById("chatbox-messages");
 
+// Toggle chatbox visibility
 chatboxToggle.addEventListener("click", function() {
   chatbox.classList.toggle("open");
 });
 
+// Close chatbox
 closeChatButton.addEventListener("click", function() {
   chatbox.classList.remove("open");
 });
 
+// Send messages
 sendButton.addEventListener("click", function() {
   let message = chatInput.value;
   if (message.trim() !== "") {
@@ -26,8 +29,8 @@ sendButton.addEventListener("click", function() {
   }
 });
 
+// Auto-reply (demo)
 function autoReply() {
-  if (!chatbox.classList.contains("open")) return;
   let replyMessage = document.createElement("div");
   replyMessage.classList.add("creator-message");
   replyMessage.textContent = "Thank you for your message! We will respond shortly.";
@@ -74,12 +77,12 @@ function filterEvents() {
   });
 }
 
+// Dark Mode Toggle
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
 }
 
-document.addEventListener('DOMContentLoaded', loadEvents);
-
+// Explore button animation
 document.getElementById('explore-btn').addEventListener('click', function() {
   document.body.classList.add('fade-out');
   setTimeout(() => {
@@ -91,18 +94,13 @@ window.addEventListener('pageshow', function(event) {
   document.body.classList.remove('fade-out');
 });
 
-// Navbar toggle for mobile
-const navToggle = document.getElementById('nav-toggle');
-const navLinks = document.getElementById('nav-links');
+// Mobile Navbar Toggle
+const navToggleBtn = document.getElementById('nav-toggle');
+const navUl = document.querySelector('header nav ul');
 
-if(navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-  });
+navToggleBtn.addEventListener('click', () => {
+    navUl.classList.toggle('active');
+});
 
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-    });
-  });
-}
+// Load events on page load
+window.addEventListener('DOMContentLoaded', loadEvents);
