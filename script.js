@@ -1,46 +1,51 @@
-// Chatbox functionality
-let chatbox = document.getElementById("chatbox-container");
-let chatboxToggle = document.getElementById("chatbox-toggle");
-let closeChatButton = document.getElementById("close-chat");
-let chatInput = document.getElementById("chatbox-input");
-let sendButton = document.getElementById("send-message");
-let messagesContainer = document.getElementById("chatbox-messages");
+// -------------------- Chatbox Functionality --------------------
+const chatbox = document.getElementById("chatbox-container");
+const chatboxToggle = document.getElementById("chatbox-toggle");
+const closeChatButton = document.getElementById("close-chat");
+const chatInput = document.getElementById("chatbox-input");
+const sendButton = document.getElementById("send-message");
+const messagesContainer = document.getElementById("chatbox-messages");
 
-// Toggle chatbox visibility
-chatboxToggle.addEventListener("click", function() {
-  chatbox.classList.toggle("open");
-});
-
-// Close chatbox
-closeChatButton.addEventListener("click", function() {
-  chatbox.classList.remove("open");
-});
-
-// Send messages
-sendButton.addEventListener("click", function() {
-  let message = chatInput.value;
-  if (message.trim() !== "") {
-    let userMessage = document.createElement("div");
-    userMessage.classList.add("user-message");
-    userMessage.textContent = message;
-    messagesContainer.appendChild(userMessage);
-    chatInput.value = "";
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  }
-});
-
-// Auto-reply (demo)
-function autoReply() {
-  let replyMessage = document.createElement("div");
-  replyMessage.classList.add("creator-message");
-  replyMessage.textContent = "Thank you for your message! We will respond shortly.";
-  messagesContainer.appendChild(replyMessage);
-  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+if (chatboxToggle) {
+  chatboxToggle.addEventListener("click", () => {
+    chatbox.classList.toggle("open");
+  });
 }
 
+if (closeChatButton) {
+  closeChatButton.addEventListener("click", () => {
+    chatbox.classList.remove("open");
+  });
+}
+
+if (sendButton) {
+  sendButton.addEventListener("click", () => {
+    const message = chatInput.value;
+    if (message.trim() !== "") {
+      const userMessage = document.createElement("div");
+      userMessage.classList.add("user-message");
+      userMessage.textContent = message;
+      messagesContainer.appendChild(userMessage);
+      chatInput.value = "";
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+  });
+}
+
+// Auto-reply demo
+function autoReply() {
+  if (messagesContainer) {
+    const replyMessage = document.createElement("div");
+    replyMessage.classList.add("creator-message");
+    replyMessage.textContent = "Thank you for your message! We will respond shortly.";
+    messagesContainer.appendChild(replyMessage);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+}
 setInterval(autoReply, 10000);
 
-// Event-related functions
+
+// -------------------- Event Functions --------------------
 const eventsData = [
   { title: "Jazz Night", type: "music" },
   { title: "AI Workshop", type: "workshop" },
@@ -50,6 +55,8 @@ const eventsData = [
 
 function loadEvents() {
   const container = document.getElementById("events-section");
+  if (!container) return;
+
   container.innerHTML = "";
   eventsData.forEach(event => {
     const card = document.createElement("div");
@@ -60,14 +67,22 @@ function loadEvents() {
 }
 
 function filterEvents() {
-  const type = document.getElementById("typeFilter").value;
-  const search = document.getElementById("search").value.toLowerCase();
+  const typeSelect = document.getElementById("typeFilter");
+  const searchInput = document.getElementById("search");
+
+  if (!typeSelect || !searchInput) return;
+
+  const type = typeSelect.value;
+  const search = searchInput.value.toLowerCase();
+
   const filtered = eventsData.filter(event =>
     (type === "all" || event.type === type) &&
     event.title.toLowerCase().includes(search)
   );
 
   const container = document.getElementById("events-section");
+  if (!container) return;
+
   container.innerHTML = "";
   filtered.forEach(event => {
     const card = document.createElement("div");
@@ -77,30 +92,35 @@ function filterEvents() {
   });
 }
 
-// Dark Mode Toggle
+// -------------------- Dark Mode --------------------
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
 }
 
-// Explore button animation
-document.getElementById('explore-btn').addEventListener('click', function() {
-  document.body.classList.add('fade-out');
-  setTimeout(() => {
-    window.location.href = "events.html";
-  }, 500); 
-});
+// -------------------- Explore Button Animation --------------------
+const exploreBtn = document.getElementById('explore-btn');
+if (exploreBtn) {
+  exploreBtn.addEventListener('click', () => {
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+      window.location.href = "events.html";
+    }, 500); 
+  });
+}
 
-window.addEventListener('pageshow', function(event) {
+window.addEventListener('pageshow', () => {
   document.body.classList.remove('fade-out');
 });
 
-// Mobile Navbar Toggle
+// -------------------- Mobile Navbar Toggle --------------------
 const navToggleBtn = document.getElementById('nav-toggle');
 const navUl = document.querySelector('header nav ul');
 
-navToggleBtn.addEventListener('click', () => {
-    navUl.classList.toggle('active');
-});
+if (navToggleBtn && navUl) {
+  navToggleBtn.addEventListener('click', () => {
+      navUl.classList.toggle('active');
+  });
+}
 
-// Load events on page load
+// -------------------- Initialize --------------------
 window.addEventListener('DOMContentLoaded', loadEvents);

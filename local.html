@@ -7,10 +7,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="logo">EventSphere</div>
+    <!-- Hamburger toggle for mobile -->
+    <button class="nav-toggle" id="nav-toggle">&#9776;</button>
     <nav>
-      <ul>
+      <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="events.html">All Events</a></li>
         <li><a href="local.html" class="active">Local Gems</a></li>
@@ -23,15 +26,15 @@
     </nav>
   </header>
 
+  <!-- Page Content -->
   <section class="page">
     <h2>Local Gems</h2>
     <p>Explore the hidden gems around your city. Find unique, offbeat events happening nearby.</p>
 
-    <!-- 🌍 Local Gems Section -->
+    <!-- Local Gems Section -->
     <section class="local-gems">
       <h3>🌍 Local Gems</h3>
 
-      <!-- Event Cards for Local Gems -->
       <div class="event-card">
         <h4>Cultural Treasure Hunt in Old Delhi</h4>
         <p>📍 Delhi | 🎭 Cultural | 🗓️ April 30, 2025</p>
@@ -70,14 +73,10 @@
 
   </section>
 
-  <footer>
-    <p>&copy; 2025 Eventify | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
-  </footer>
-
-  <!-- 💬 Chatbox container -->
+  <!-- Chatbox -->
   <div id="chatbox-container">
     <div id="chatbox-header">
-      Chat with Creator
+      <span>Chat with Creator</span>
       <button id="close-chat">✖</button>
     </div>
     <div id="chatbox-messages"></div>
@@ -86,6 +85,10 @@
       <button id="send-message">Send</button>
     </div>
   </div>
+
+  <footer>
+    <p>&copy; 2025 EventSphere | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
